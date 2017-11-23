@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="css/adminLogin.css">
+</head>
+<body>
+
+<!--背景-->
+<div id="main-bg" :class="{bodyBg:setClass}"></div>
+
+<!--显示登录框的按钮-->
+<input @click="showLoginWindow" type="button" id="login-btn" value="登录">
+
+<!--登录框-->
+<!--
+如果一开始要影藏的话 一定要在这里设置 display : none ,
+如果在CSS 中设置 那么最终浏览器会执行CSS中的display,
+那么元素就永远不会显示了.
+-->
+<div id="login-window" style="display: none" v-show="isShow">
+
+    <!--登录框顶部-->
+    <div class="loginWindowHeader">
+        <img class="icon lf" src="./img/baiduicon.png">
+        <h3 class="lf"> {{text}} </h3>
+        <img @click="closeLoginWindow" class="shutDown rt" src="./img/shoutdown.png">
+    </div>
+    <!--登录框主要内容-->
+    <div class="loginWindowMain clear">
+
+        <!--登录提示-->
+        <span class="login-message">{{loginMessage}}</span>
+
+        <!--短信登录-->
+        <div class="clear">
+            <a @click="loginByPhone" class="loginByPhone rt">短信快捷登录</a>
+        </div>
+
+        <!--username-->
+        <div class="username">
+            <li v-show="userNameDelete"></li>
+            <input type="text" class="editText-user" title="账号" placeholder="手机/邮箱/用户">
+
+        </div>
+
+
+        <!--password-->
+        <div class="password">
+            <li v-show="passWordDelete"></li>
+            <input type="password" class="editText-pass" title="密码" placeholder="密码">
+        </div>
+
+        <!--验证码-->
+        <div class="verification clear" v-show="verificationShow">
+            <input type="text" class="verification-input lf" placeholder="验证码">
+            <span class="verification-text lf">我是验证码&nbsp</span>
+            <a class="verification-change lf">换一张</a>
+        </div>
+        <!--登录问题-->
+        <div class="loginProgram">
+            <input class="autoLogin" type="checkbox" checked id="auto-login">
+            <label for="auto-login" class="autoLogin-text">下次自动登录</label>
+            <a class="program rt" target="_blank">登录遇到问题</a>
+        </div>
+        <!--登录按钮-->
+        <input type="submit" class="loginButton" value="登录">
+        <!--注册按钮-->
+        <a class="login-atOnce">立即注册</a>
+
+
+    </div>
+
+    <!--登录框底部-->
+    <div class="loginWindowFooter">
+        <span class="login-choose">可以使用以下方式登录</span>
+        <a class="login-qq" title="QQ账号"></a>
+        <a class="login-weibo" title="新浪微博"></a>
+        <div class="login-QRCode rt"></div>
+    </div>
+
+
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

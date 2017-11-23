@@ -1,0 +1,309 @@
+/*1.通用CSS*/
+body {
+    font: 12px "microsoft yahei", Arial, Helvetica, sans-serif;
+    color: #999;
+    margin: 0;
+    background: #F5F5F5;
+    padding-right: 35px;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, dl, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    margin: 0 auto;
+    vertical-align: bottom;
+}
+
+a {
+    cursor: pointer;
+    color: #1b66c7;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1b66c7;
+    text-decoration: underline;
+}
+
+/*span:hover {*/
+/*text-decoration: underline;*/
+/*color: #436EEE;*/
+/*}*/
+
+.lf {
+    float: left;
+}
+
+.rt {
+    float: right;
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*body 背景*/
+.bodyBg {
+    background-color: #CFCFCF;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*登录按钮*/
+#login-btn {
+    height: 40px;
+    background-color: #999999;
+    /*先暂时设置可以点击*/
+    /*position: absolute;*/
+}
+
+/*登录窗口.*/
+#login-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -225px 0 0 -200px;
+    width: 390px;
+    /*border: 1px solid #008800;*/
+    background-color: #FFFFFF;
+}
+
+/**************************************************登录框头部***************************************/
+.loginWindowHeader {
+    width: 100%;
+    height: 45px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    cursor: all-scroll;
+}
+
+.loginWindowHeader h3 {
+    line-height: 48px;
+    color: #333;
+    font-size: 16px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    margin: 8px 3px;
+}
+
+.shutDown {
+    /*margin: 5px 2px;*/
+    width: 34px;
+    height: 32px;
+    margin: 8px 3px;
+    cursor: pointer;
+}
+
+/**********************************登录框主界面*****************************************/
+.loginWindowMain {
+    border-bottom: 1px solid #CFCFCF;
+    margin-bottom: 15px;
+}
+
+.login-message {
+    height: 14px;
+    display: block;
+    padding-left: 20px;
+    padding-top: 8px;
+    color: #fc4343;
+    line-height: 14px;
+    font-size: 12px;
+}
+
+.loginByPhone {
+    display: block;
+    margin-right: 20px;
+    color: black;
+    background: url("../img/phoneIcon.png") left center no-repeat;
+    text-indent: 20px;
+
+}
+
+/*username & password*/
+.username {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.password {
+    position: relative;
+    margin: 20px 20px;
+}
+
+.editText-user {
+    height: 35px;
+    width: 314px;
+    border: 1px solid #999999;
+    background: url("../img/icon_user.png") 10px center no-repeat;
+    padding: 2px 2px 2px 35px;
+}
+
+.editText-pass {
+    height: 35px;
+    width: 314px;
+    border: 1px solid #999999;
+    background: url("../img/icon_pass.png") 10px center no-repeat;
+    padding: 2px 2px 2px 35px;
+}
+
+.username li {
+    display: inline-block;
+    position: absolute;
+    left: 310px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    background: url("../img/deleteS.png") center no-repeat;
+}
+
+.password li {
+    display: inline-block;
+    position: absolute;
+    left: 310px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    background: url("../img/deleteS.png") center no-repeat;
+}
+
+/*验证码*/
+.verification-input {
+    height: 36px;
+    width: 178px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border: 1px solid #999999;
+}
+
+.verification-text {
+    height: 38px;
+    width: 88px;
+    border: 1px solid #999999;
+    line-height: 36px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.verification-change {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+}
+
+/*自动登录*/
+
+.loginProgram {
+    height: 25px;
+    margin-top: 20px;
+}
+
+.autoLogin {
+    height: 15px;
+    width: 15px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.autoLogin-text {
+    height: 25px;
+    line-height: 25px;
+    position: absolute;
+}
+
+.program {
+    line-height: 25px;
+    margin-right: 25px;
+
+}
+
+/*登录按钮*/
+.loginButton {
+    width: 350px;
+    height: 48px;
+    background-color: #3f89ec;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    /*font-weight: 700;*/
+    border: 0;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+/*立即注册*/
+.login-atOnce {
+    display: block;
+    text-align: right;
+    margin-right: 25px;
+    margin-bottom: 30px;
+}
+
+/********************************登录框尾部*******************************************/
+.loginWindowFooter {
+    margin-left: 20px;
+}
+
+.login-choose {
+    display: block;
+    color: #666;
+    font-size: 12px;
+}
+
+.login-qq {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url("../img/qqIcon.png") center no-repeat;
+}
+
+.login-weibo {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url("../img/weiboIcon.png") center no-repeat;
+}
+
+.login-QRCode {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background: url("../img/ewmIcon.png") no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
