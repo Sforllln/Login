@@ -193,6 +193,8 @@ a:hover {
     line-height: 36px;
     padding-left: 10px;
     margin-left: 10px;
+    color: #000000;
+    font-size: 20px;
 }
 
 .verification-change {

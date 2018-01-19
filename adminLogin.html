@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <script src="https://unpkg.com/vue"></script>
+    <script src="js/vue.js"></script>
     <link rel="stylesheet" href="css/adminLogin.css">
 </head>
 <body>
@@ -20,7 +20,11 @@
 如果在CSS 中设置 那么最终浏览器会执行CSS中的display,
 那么元素就永远不会显示了.
 -->
-<div id="login-window" style="display: none" v-show="isShow">
+<!--
+不可选中
+onselectstart="return   false"
+-->
+<div id="login-window" style="display: none" v-show="loginWindowIsShow" onselectstart="return   false">
 
     <!--登录框顶部-->
     <div class="loginWindowHeader">
@@ -41,23 +45,22 @@
 
         <!--username-->
         <div class="username">
-            <li v-show="userNameDelete"></li>
-            <input type="text" class="editText-user" title="账号" placeholder="手机/邮箱/用户">
-
+            <li id="usernameDelete" v-show="userNameDelete" @click="onDeleteClick"></li>
+            <input type="text" class="editText-user" title="账号" placeholder="手机/邮箱/用户"
+                   v-model="userInfo.userName" v-on:blur="onBlur">
         </div>
-
-
         <!--password-->
         <div class="password">
-            <li v-show="passWordDelete"></li>
-            <input type="password" class="editText-pass" title="密码" placeholder="密码">
+            <li id="passwordDelete" v-show="passWordDelete" @click="onDeleteClick"></li>
+            <input type="password" class="editText-pass" title="密码" placeholder="密码"
+                   v-model="userInfo.passWord">
         </div>
 
         <!--验证码-->
         <div class="verification clear" v-show="verificationShow">
-            <input type="text" class="verification-input lf" placeholder="验证码">
-            <span class="verification-text lf">我是验证码&nbsp</span>
-            <a class="verification-change lf">换一张</a>
+            <input type="text" class="verification-input lf" placeholder="验证码" v-model="inputVerificationCode">
+            <span class="verification-text lf">{{verificationCode}}</span>
+            <a class="verification-change lf" @click="createCode">换一张</a>
         </div>
         <!--登录问题-->
         <div class="loginProgram">
@@ -66,7 +69,7 @@
             <a class="program rt" target="_blank">登录遇到问题</a>
         </div>
         <!--登录按钮-->
-        <input type="submit" class="loginButton" value="登录">
+        <input type="submit" class="loginButton" value="登录" @click="checkUserDataAndCode">
         <!--注册按钮-->
         <a class="login-atOnce">立即注册</a>
 
